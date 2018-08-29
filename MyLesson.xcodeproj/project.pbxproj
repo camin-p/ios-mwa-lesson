@@ -15,6 +15,7 @@
 		EC6E2669213683AF000CC50F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E2668213683AF000CC50F /* main.m */; };
 		EC6E2673213683B0000CC50F /* MyLessonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E2672213683B0000CC50F /* MyLessonTests.m */; };
 		EC6E267E213683B0000CC50F /* MyLessonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E267D213683B0000CC50F /* MyLessonUITests.m */; };
+		EC6E268D213689CD000CC50F /* Kanit-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC6E268C213689CD000CC50F /* Kanit-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		EC6E2679213683B0000CC50F /* MyLessonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLessonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC6E267D213683B0000CC50F /* MyLessonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLessonUITests.m; sourceTree = "<group>"; };
 		EC6E267F213683B0000CC50F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC6E268C213689CD000CC50F /* Kanit-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		EC6E2658213683AE000CC50F /* MyLesson */ = {
 			isa = PBXGroup;
 			children = (
+				EC6E268B213689A6000CC50F /* fonts */,
 				EC6E2659213683AE000CC50F /* AppDelegate.h */,
 				EC6E265A213683AE000CC50F /* AppDelegate.m */,
 				EC6E265C213683AE000CC50F /* ViewController.h */,
@@ -130,6 +133,14 @@
 				EC6E267F213683B0000CC50F /* Info.plist */,
 			);
 			path = MyLessonUITests;
+			sourceTree = "<group>";
+		};
+		EC6E268B213689A6000CC50F /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EC6E268C213689CD000CC50F /* Kanit-Light.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 				EC6E2666213683AF000CC50F /* LaunchScreen.storyboard in Resources */,
 				EC6E2663213683AF000CC50F /* Assets.xcassets in Resources */,
 				EC6E2661213683AE000CC50F /* Main.storyboard in Resources */,
+				EC6E268D213689CD000CC50F /* Kanit-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

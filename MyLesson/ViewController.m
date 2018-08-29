@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIView *cardView1;
+@property (weak, nonatomic) IBOutlet UIButton *mainBtn;
 
 @end
 
@@ -17,6 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [_mainBtn layer].cornerRadius=10;
+    [_mainBtn setClipsToBounds:NO];
+    [[_mainBtn layer] setShadowColor:[UIColor blackColor].CGColor];
+    [[_mainBtn layer] setShadowOpacity:0.24];
+    [[_mainBtn layer]setShadowRadius:2];
+    [[_mainBtn layer] setShadowOffset:CGSizeMake(0, 2)];
+    
+    [_cardView1 setClipsToBounds:NO];
+    [[_cardView1 layer] setShadowColor:[UIColor blackColor].CGColor];
+    [[_cardView1 layer] setShadowOpacity:0.24];
+    [[_cardView1 layer]setShadowRadius:2];
+    [[_cardView1 layer] setShadowOffset:CGSizeMake(0, 2)];
 }
 
 
