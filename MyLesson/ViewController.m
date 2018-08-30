@@ -70,6 +70,9 @@
 - (IBAction)switchLanguage:(id)sender {
     [Utils setCurrentLanguage:@"en"];
 }
+
+
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 20;
 }
@@ -81,13 +84,13 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     customTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
+    
     if (!cell) {
         cell = [[customTableViewCell alloc] init];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        
     }
     
+    cell.cardView.titleLbl.text = @"Table View";
     return cell;
 }
 @end

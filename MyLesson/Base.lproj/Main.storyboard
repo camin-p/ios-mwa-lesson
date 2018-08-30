@@ -154,7 +154,7 @@
                     <navigationItem key="navigationItem" id="tiZ-Wh-BYl"/>
                     <connections>
                         <outlet property="mainBtn" destination="Y8O-BZ-uQM" id="NYP-C5-fM7"/>
-                        <outlet property="tableView" destination="6HK-ct-xoE" id="obB-2K-fmf"/>
+                        <outlet property="tableView" destination="6HK-ct-xoE" id="q5g-GN-93g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
