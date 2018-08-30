@@ -14,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="cardView">
             <connections>
                 <outlet property="detailLbl" destination="B2j-7o-uiw" id="gUZ-4W-nsd"/>
+                <outlet property="imageView" destination="W1M-0e-gVe" id="IuC-gQ-P24"/>
                 <outlet property="titleLbl" destination="RUr-TG-g8A" id="Xei-2X-oAG"/>
             </connections>
         </placeholder>
@@ -22,38 +23,37 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJR-FC-Qjr">
-                    <rect key="frame" x="8" y="8" width="84" height="84"/>
-                    <color key="backgroundColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="CJR-FC-Qjr" secondAttribute="height" multiplier="1:1" id="QGC-MG-PsJ"/>
-                    </constraints>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t Say a Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUr-TG-g8A">
-                    <rect key="frame" x="100" y="8" width="267" height="21"/>
+                    <rect key="frame" x="116" y="8" width="251" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2j-7o-uiw">
-                    <rect key="frame" x="100" y="37" width="267" height="50.5"/>
+                    <rect key="frame" x="116" y="37" width="251" height="50.5"/>
                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Up exlaborum incididunt.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W1M-0e-gVe">
+                    <rect key="frame" x="8" y="8" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="W1M-0e-gVe" secondAttribute="height" multiplier="1:1" id="41P-ll-Xtr"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="RUr-TG-g8A" firstAttribute="leading" secondItem="CJR-FC-Qjr" secondAttribute="trailing" constant="8" id="0PO-Ef-dEk"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="B2j-7o-uiw" secondAttribute="trailing" constant="8" id="Ckz-bz-gZD"/>
+                <constraint firstItem="W1M-0e-gVe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="18W-jx-emK"/>
                 <constraint firstItem="RUr-TG-g8A" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="LUb-KG-Lxl"/>
-                <constraint firstAttribute="bottom" secondItem="CJR-FC-Qjr" secondAttribute="bottom" constant="8" id="OFX-i9-sng"/>
-                <constraint firstItem="B2j-7o-uiw" firstAttribute="top" secondItem="RUr-TG-g8A" secondAttribute="bottom" constant="8" id="PuH-Q9-QYX"/>
+                <constraint firstItem="B2j-7o-uiw" firstAttribute="top" secondItem="RUr-TG-g8A" secondAttribute="bottom" constant="8" id="OVo-ee-rI8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RUr-TG-g8A" secondAttribute="trailing" constant="8" id="RhJ-aG-tAp"/>
-                <constraint firstItem="B2j-7o-uiw" firstAttribute="leading" secondItem="CJR-FC-Qjr" secondAttribute="trailing" constant="8" id="Y2t-K8-AZm"/>
-                <constraint firstItem="CJR-FC-Qjr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="pgh-y5-ICR"/>
-                <constraint firstItem="CJR-FC-Qjr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="pyK-dU-yc8"/>
+                <constraint firstItem="B2j-7o-uiw" firstAttribute="leading" secondItem="W1M-0e-gVe" secondAttribute="trailing" constant="8" id="Wrm-Dn-XH2"/>
+                <constraint firstItem="W1M-0e-gVe" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="aA7-6a-1hS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="B2j-7o-uiw" secondAttribute="trailing" constant="8" id="cdP-Pa-MnT"/>
+                <constraint firstItem="RUr-TG-g8A" firstAttribute="leading" secondItem="W1M-0e-gVe" secondAttribute="trailing" constant="8" id="fCv-cU-deQ"/>
+                <constraint firstItem="W1M-0e-gVe" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="8" id="gSn-ww-5dk"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

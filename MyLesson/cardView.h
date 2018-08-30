@@ -11,5 +11,6 @@
 @interface cardView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *detailLbl;
 @property (weak, nonatomic) IBOutlet UILabel *titleLbl;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end

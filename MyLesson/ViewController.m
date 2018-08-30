@@ -11,6 +11,8 @@
 #import "cardView.h"
 #import "Utils.h"
 #import "customTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *cardView1;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -85,9 +87,9 @@
     NSURLSessionDataTask * task = [session dataTaskWithRequest:request completionHandler:^(NSData* data,NSURLResponse*response, NSError*error){
         id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         NSArray *NewsList = [jsonObject objectForKey:@"new_list"];
-        _newsItem = NewsList;
+        self->_newsItem = NewsList;
         dispatch_async(dispatch_get_main_queue(), ^(void){
-            [_tableView reloadData];
+            [self->_tableView reloadData];
         });
         
         
@@ -114,7 +116,8 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     NSDictionary* data = [_newsItem objectAtIndex:indexPath.row];
-    cell.cardView.titleLbl.text = data[@"title"];
+   
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"cover_picture"]]]; cell.cardView.titleLbl.text = data[@"title"];
     cell.cardView.detailLbl.text = data[@"news"];
     return cell;
 }
