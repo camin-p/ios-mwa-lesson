@@ -46,6 +46,7 @@
     [_cardView2 titleLbl].text = @"Hello World";
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
+    [_tableView setBackgroundColor:[UIColor clearColor]];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

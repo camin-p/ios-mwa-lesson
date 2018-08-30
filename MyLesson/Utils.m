@@ -22,22 +22,28 @@
     }
 }
 +(NSString*) getCurrentLanguage{
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    NSString *currentLanguageKey = @"currentLanguage";
-    NSString * language = nil;
-    if ([preferences objectForKey:currentLanguageKey] == nil)
-    {
-        language = [[NSLocale preferredLanguages] objectAtIndex:0];
-        if (![language isEqualToString:@"en-US"] && ![language isEqualToString:@"th-TH"]) {
-            language = @"en-US";
-        }
-        [Utils setCurrentLanguage:language];
-    }
-    else
-    {
-        language = [preferences stringForKey:currentLanguageKey];
-    }
-    return language;
+//    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+//    NSString *currentLanguageKey = @"currentLanguage";
+//    NSString * language = nil;
+//    if ([preferences objectForKey:currentLanguageKey] == nil)
+//    {
+//        language = [[NSLocale preferredLanguages] objectAtIndex:0];
+//        if (![language isEqualToString:@"en-US"] && ![language isEqualToString:@"th-TH"]) {
+//            language = @"en-US";
+//        }
+//        [Utils setCurrentLanguage:language];
+//    }
+//    else
+//    {
+//        language = [preferences stringForKey:currentLanguageKey];
+//    }
+//    return language;
+    NSString *language = NSBundle.mainBundle.preferredLocalizations.firstObject;
+    
+    NSLocale *locale = NSLocale.currentLocale;
+    NSString *langCode = [locale objectForKey:NSLocaleLanguageCode];
+    
+    return langCode;
 }
 +(void) setCurrentLanguage:(NSString*) language{
 //    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
