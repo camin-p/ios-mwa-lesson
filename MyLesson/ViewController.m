@@ -9,10 +9,12 @@
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "cardView.h"
+#import "Utils.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *cardView1;
 @property (weak, nonatomic) IBOutlet UIButton *mainBtn;
 @property (weak, nonatomic) IBOutlet cardView *cardView2;
+- (IBAction)switchLanguage:(id)sender;
 
 @end
 
@@ -43,5 +45,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)switchLanguage:(id)sender {
+    [Utils setCurrentLanguage:@"en"];
+}
 
 @end
