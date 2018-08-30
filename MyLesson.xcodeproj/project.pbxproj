@@ -20,6 +20,7 @@
 		ECA17D00213793F80095DCDB /* cardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA17D02213793F80095DCDB /* cardView.xib */; };
 		ECA17D08213795410095DCDB /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA17D06213795410095DCDB /* Utils.m */; };
 		ECA17D0B213796220095DCDB /* BundleLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA17D09213796220095DCDB /* BundleLanguage.m */; };
+		ECA17D0E2137A7D60095DCDB /* customTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA17D0D2137A7D60095DCDB /* customTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		ECA17D07213795410095DCDB /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		ECA17D09213796220095DCDB /* BundleLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleLanguage.m; sourceTree = "<group>"; };
 		ECA17D0A213796220095DCDB /* BundleLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundleLanguage.h; sourceTree = "<group>"; };
+		ECA17D0C2137A7D60095DCDB /* customTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = customTableViewCell.h; sourceTree = "<group>"; };
+		ECA17D0D2137A7D60095DCDB /* customTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = customTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 				EC3452CC2136968A0067BCA1 /* cardView.h */,
 				EC3452CD2136968A0067BCA1 /* cardView.m */,
 				ECA17D02213793F80095DCDB /* cardView.xib */,
+				ECA17D0C2137A7D60095DCDB /* customTableViewCell.h */,
+				ECA17D0D2137A7D60095DCDB /* customTableViewCell.m */,
 			);
 			path = MyLesson;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECA17D0E2137A7D60095DCDB /* customTableViewCell.m in Sources */,
 				EC6E265E213683AE000CC50F /* ViewController.m in Sources */,
 				EC6E2669213683AF000CC50F /* main.m in Sources */,
 				EC3452CE2136968A0067BCA1 /* cardView.m in Sources */,

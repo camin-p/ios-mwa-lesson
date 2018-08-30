@@ -10,16 +10,23 @@
 #import <QuartzCore/QuartzCore.h>
 #import "cardView.h"
 #import "Utils.h"
+#import "customTableViewCell.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *cardView1;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *mainBtn;
 @property (weak, nonatomic) IBOutlet cardView *cardView2;
 - (IBAction)switchLanguage:(id)sender;
-
 @end
 
 @implementation ViewController
-
+-(instancetype)init{
+    self =[super init];
+    if (self) {
+        
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -37,8 +44,22 @@
     [[_cardView1 layer] setShadowOffset:CGSizeMake(0, 2)];
     
     [_cardView2 titleLbl].text = @"Hello World";
+    [_tableView setDelegate:self];
+    [_tableView setDataSource:self];
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    
+}
+- (void)viewDidDisappear:(BOOL)animated{
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -49,5 +70,24 @@
 - (IBAction)switchLanguage:(id)sender {
     [Utils setCurrentLanguage:@"en"];
 }
-
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 20;
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 120;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    customTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
+    if (!cell) {
+        cell = [[customTableViewCell alloc] init];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        
+    }
+    
+    return cell;
+}
 @end
