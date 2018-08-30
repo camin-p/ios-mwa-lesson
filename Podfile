@@ -3,11 +3,13 @@
 
 target 'MyLesson' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+  use_frameworks!
 
   # Pods for MyLesson
   pod 'SDWebImage', '~>3.6'
   pod 'MBProgressHUD', '~>0.9.1'  
+   
+  pod 'Charts','~>3.0.2'
 
   target 'MyLessonTests' do
     inherit! :search_paths

@@ -12,15 +12,17 @@
 #import "Utils.h"
 #import "customTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-
+#include "progressTableViewCell.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *cardView1;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *mainBtn;
 @property (weak, nonatomic) IBOutlet cardView *cardView2;
-
+@property (strong, nonatomic) MBProgressHUD* hud;
 @property (nonatomic, strong) NSArray* newsItem;
-
+@property (assign) bool isLoading;
+@property(nonatomic, strong) NSString* lastDateTime;
 - (IBAction)switchLanguage:(id)sender;
 @end
 
@@ -35,6 +37,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    _hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    _hud.labelText = @"Loading";
+    
+    
+    
     _newsItem = @[];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]]];
     [_mainBtn layer].cornerRadius=10;
@@ -60,7 +67,15 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self loadNews];
+    [_hud show:YES];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+    
+    NSInteger day = [components day];
+    NSInteger month = [components month];
+    NSInteger year = [components year];
+    
+    NSString *string = [NSString stringWithFormat:@"%ld-%ld-%ld", (long)year, (long)month, (long)day];
+    [self loadNews:string];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     
@@ -79,17 +94,35 @@
     [Utils setCurrentLanguage:@"en"];
 }
 
--(void) loadNews{
-    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString: @"https://www.mwa.co.th/eServiceNews.php"] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:300];
+-(void) loadNews:(NSString*) requestDate{
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"https://www.mwa.co.th/eServiceNews.php?requestDateTime=%@",requestDate]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:300];
     [request setHTTPMethod:@"GET"];
     NSURLSessionConfiguration* conf = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession* session = [NSURLSession sessionWithConfiguration:conf];
     NSURLSessionDataTask * task = [session dataTaskWithRequest:request completionHandler:^(NSData* data,NSURLResponse*response, NSError*error){
         id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         NSArray *NewsList = [jsonObject objectForKey:@"new_list"];
-        self->_newsItem = NewsList;
-        dispatch_async(dispatch_get_main_queue(), ^(void){
+        NSMutableArray*arr = [NSMutableArray arrayWithArray:self->_newsItem];
+        long index = [self->_newsItem count]-1;
+        if ([self->_newsItem count]>0)
+        {
+            if ([[self->_newsItem objectAtIndex:index] objectForKey:@"isLoading"]) {
+                [arr removeObjectAtIndex:index];
+            }
+        }
+        
+        for (NSDictionary*dict in NewsList) {
+            [arr addObject:dict];
+        }
+        self->_newsItem = arr;
+        NSDictionary *lastNews = [NewsList objectAtIndex:[NewsList count]-1];
+        self->_lastDateTime = [NSString stringWithFormat:@"%@%@%@",
+                        lastNews[@"pubDate"],
+                        @"%20",
+                        lastNews[@"pubTime"]]; dispatch_async(dispatch_get_main_queue(), ^(void){
             [self->_tableView reloadData];
+            [self->_hud hide:YES];
+            _isLoading=false;
         });
         
         
@@ -106,19 +139,58 @@
     return 1;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 120;
+    
+    NSDictionary* data = [_newsItem objectAtIndex:indexPath.row];
+    if ([data objectForKey:@"isLoading"]) {
+        return 30;
+    }else{
+        return 120;
+    }
+    
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    customTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
     
-    if (!cell) {
-        cell = [[customTableViewCell alloc] init];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
     NSDictionary* data = [_newsItem objectAtIndex:indexPath.row];
-   
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"cover_picture"]]]; cell.cardView.titleLbl.text = data[@"title"];
-    cell.cardView.detailLbl.text = data[@"news"];
-    return cell;
+    if ([data objectForKey:@"isLoading"]) {
+        progressTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"progressCell" forIndexPath:indexPath];
+        if (!cell) {
+            cell = [[progressTableViewCell alloc] init];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        return cell;
+    }else{
+        customTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
+        
+        if (!cell) {
+            cell = [[customTableViewCell alloc] init];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        
+        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"cover_picture"]]]; cell.cardView.titleLbl.text = data[@"title"];
+        cell.cardView.detailLbl.text = data[@"news"];
+        return cell;
+    }
+    
+}
+-(void)scrollViewDidScroll:(UIScrollView *)aScrollView {
+    if (!_isLoading) {
+        CGPoint offset = aScrollView.contentOffset;
+        CGRect bounds = aScrollView.bounds;
+        CGSize size = aScrollView.contentSize;
+        UIEdgeInsets inset = aScrollView.contentInset;
+        float y = offset.y + bounds.size.height - inset.bottom;
+        float h = size.height;
+        float reload_distance = 50;
+        if(y > h + reload_distance) {
+            _isLoading = true;
+            NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:_newsItem];
+            [arr addObject:@{@"isLoading":@"1"}];
+            _newsItem = arr;
+            [_tableView reloadData];
+            [_hud show:YES];
+            [self loadNews:_lastDateTime];
+        }
+    }
+    
 }
 @end
