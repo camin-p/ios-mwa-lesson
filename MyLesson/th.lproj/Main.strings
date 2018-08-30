@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Lorem ipsum dolor sit amet"; ObjectID = "Eyh-Gf-ICe"; */
+"Eyh-Gf-ICe.text" = "รายละเอียด";
+
+/* Class = "UILabel"; text = "ผู้ติดต่อ"; ObjectID = "LCS-MI-xwh"; */
+"LCS-MI-xwh.text" = "ผู้ติดต่อ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Y8O-BZ-uQM"; */
+"Y8O-BZ-uQM.normalTitle" = "ปุ่ม";
+
+/* Class = "UILabel"; text = "Don’t Say a Word"; ObjectID = "Yir-NK-Osv"; */
+"Yir-NK-Osv.text" = "Don’t Say a Word";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "aNs-Jv-z70"; */
+"aNs-Jv-z70.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Up exlaborum incididunt."; ObjectID = "d4T-hY-Osy"; */
+"d4T-hY-Osy.text" = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Up exlaborum incididunt.";

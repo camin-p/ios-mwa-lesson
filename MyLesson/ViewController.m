@@ -8,10 +8,11 @@
 
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "cardView.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *cardView1;
 @property (weak, nonatomic) IBOutlet UIButton *mainBtn;
+@property (weak, nonatomic) IBOutlet cardView *cardView2;
 
 @end
 
@@ -32,6 +33,8 @@
     [[_cardView1 layer] setShadowOpacity:0.24];
     [[_cardView1 layer]setShadowRadius:2];
     [[_cardView1 layer] setShadowOffset:CGSizeMake(0, 2)];
+    
+    [_cardView2 titleLbl].text = @"Hello World";
 }
 
 

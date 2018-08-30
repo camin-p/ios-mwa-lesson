@@ -61,7 +61,7 @@
                                             <constraint firstAttribute="height" constant="100" id="TvX-B6-3wJ"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ผู้ติดต่อ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCS-MI-xwh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCS-MI-xwh">
                                         <rect key="frame" x="116" y="19" width="251" height="26"/>
                                         <fontDescription key="fontDescription" name="Kanit-Light" family="Kanit" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -144,13 +144,33 @@
                                                     <constraint firstItem="abF-8O-Ly0" firstAttribute="top" secondItem="0Zq-tP-3Yu" secondAttribute="top" constant="8" id="tOM-Vz-fE9"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fzc-vY-9r7" customClass="cardView">
+                                                <rect key="frame" x="8" y="120" width="359" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="clh-1V-UIP"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khe-eS-BF7" customClass="cardView">
+                                                <rect key="frame" x="8" y="228" width="359" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="nh9-rh-A8l"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="Fzc-vY-9r7" firstAttribute="leading" secondItem="a9Y-UF-0wN" secondAttribute="leading" constant="8" id="5hj-8y-bN1"/>
                                             <constraint firstItem="0Zq-tP-3Yu" firstAttribute="leading" secondItem="a9Y-UF-0wN" secondAttribute="leading" constant="12" id="6cT-VR-Yov"/>
+                                            <constraint firstAttribute="trailing" secondItem="khe-eS-BF7" secondAttribute="trailing" constant="8" id="GIy-Kr-ypl"/>
                                             <constraint firstItem="0Zq-tP-3Yu" firstAttribute="top" secondItem="a9Y-UF-0wN" secondAttribute="top" constant="12" id="I5r-qC-NW2"/>
+                                            <constraint firstItem="Fzc-vY-9r7" firstAttribute="top" secondItem="0Zq-tP-3Yu" secondAttribute="bottom" constant="8" id="T4u-8f-qUU"/>
+                                            <constraint firstItem="khe-eS-BF7" firstAttribute="leading" secondItem="a9Y-UF-0wN" secondAttribute="leading" constant="8" id="b09-ea-lhM"/>
                                             <constraint firstAttribute="trailing" secondItem="0Zq-tP-3Yu" secondAttribute="trailing" constant="12" id="dmA-tf-ZHB"/>
                                             <constraint firstAttribute="height" constant="500" id="fDO-bR-eMg"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fzc-vY-9r7" secondAttribute="trailing" constant="8" id="uQ2-eI-jYd"/>
+                                            <constraint firstItem="khe-eS-BF7" firstAttribute="top" secondItem="Fzc-vY-9r7" secondAttribute="bottom" constant="8" id="wA9-CL-SRR"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -180,6 +200,7 @@
                     <navigationItem key="navigationItem" id="tiZ-Wh-BYl"/>
                     <connections>
                         <outlet property="cardView1" destination="0Zq-tP-3Yu" id="Q8k-VS-bPy"/>
+                        <outlet property="cardView2" destination="Fzc-vY-9r7" id="gkS-1H-jXf"/>
                         <outlet property="mainBtn" destination="Y8O-BZ-uQM" id="NYP-C5-fM7"/>
                     </connections>
                 </viewController>

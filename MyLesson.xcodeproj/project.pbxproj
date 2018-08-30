@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC3452CE2136968A0067BCA1 /* cardView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3452CD2136968A0067BCA1 /* cardView.m */; };
 		EC6E265B213683AE000CC50F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E265A213683AE000CC50F /* AppDelegate.m */; };
 		EC6E265E213683AE000CC50F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E265D213683AE000CC50F /* ViewController.m */; };
 		EC6E2661213683AE000CC50F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC6E265F213683AE000CC50F /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 		EC6E2673213683B0000CC50F /* MyLessonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E2672213683B0000CC50F /* MyLessonTests.m */; };
 		EC6E267E213683B0000CC50F /* MyLessonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E267D213683B0000CC50F /* MyLessonUITests.m */; };
 		EC6E268D213689CD000CC50F /* Kanit-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC6E268C213689CD000CC50F /* Kanit-Light.ttf */; };
+		ECA17D00213793F80095DCDB /* cardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA17D02213793F80095DCDB /* cardView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC3452CC2136968A0067BCA1 /* cardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cardView.h; sourceTree = "<group>"; };
+		EC3452CD2136968A0067BCA1 /* cardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cardView.m; sourceTree = "<group>"; };
 		EC6E2656213683AE000CC50F /* MyLesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLesson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC6E2659213683AE000CC50F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC6E265A213683AE000CC50F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,6 +57,10 @@
 		EC6E267D213683B0000CC50F /* MyLessonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLessonUITests.m; sourceTree = "<group>"; };
 		EC6E267F213683B0000CC50F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC6E268C213689CD000CC50F /* Kanit-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Light.ttf"; sourceTree = "<group>"; };
+		ECA17CFE213792A20095DCDB /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
+		ECA17CFF213792A20095DCDB /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		ECA17D03213793FE0095DCDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/cardView.xib; sourceTree = "<group>"; };
+		ECA17D04213794040095DCDB /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/cardView.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,9 @@
 				EC6E2664213683AF000CC50F /* LaunchScreen.storyboard */,
 				EC6E2667213683AF000CC50F /* Info.plist */,
 				EC6E2668213683AF000CC50F /* main.m */,
+				EC3452CC2136968A0067BCA1 /* cardView.h */,
+				EC3452CD2136968A0067BCA1 /* cardView.m */,
+				ECA17D02213793F80095DCDB /* cardView.xib */,
 			);
 			path = MyLesson;
 			sourceTree = "<group>";
@@ -249,6 +260,7 @@
 				EC6E2666213683AF000CC50F /* LaunchScreen.storyboard in Resources */,
 				EC6E2663213683AF000CC50F /* Assets.xcassets in Resources */,
 				EC6E2661213683AE000CC50F /* Main.storyboard in Resources */,
+				ECA17D00213793F80095DCDB /* cardView.xib in Resources */,
 				EC6E268D213689CD000CC50F /* Kanit-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +288,7 @@
 			files = (
 				EC6E265E213683AE000CC50F /* ViewController.m in Sources */,
 				EC6E2669213683AF000CC50F /* main.m in Sources */,
+				EC3452CE2136968A0067BCA1 /* cardView.m in Sources */,
 				EC6E265B213683AE000CC50F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +329,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EC6E2660213683AE000CC50F /* Base */,
+				ECA17CFE213792A20095DCDB /* th */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -324,8 +338,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				EC6E2665213683AF000CC50F /* Base */,
+				ECA17CFF213792A20095DCDB /* th */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		ECA17D02213793F80095DCDB /* cardView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECA17D03213793FE0095DCDB /* Base */,
+				ECA17D04213794040095DCDB /* th */,
+			);
+			name = cardView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -335,6 +359,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -393,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
