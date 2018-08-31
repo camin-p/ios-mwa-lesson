@@ -9,6 +9,8 @@
 #import "detailViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 @interface detailViewController ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *webViewConstraintHEight;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLbl;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
@@ -27,6 +29,9 @@
     [[_webView scrollView] setBounces:false];
     [_webView setDelegate:self];
     [_webView loadHTMLString:_newsTxt baseURL:nil];
+    [_webView setBackgroundColor:[UIColor clearColor]];
+    [_webView setOpaque:NO];
+    [_scrollView setBounces:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +45,8 @@
     CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
     frame.size = fittingSize;
     webView.frame = frame;
-    
+    [_webViewConstraintHEight setConstant:frame.size.height];
+    [_scrollView setContentSize:CGSizeMake([UIScreen mainScreen].bounds.size.width-24, webView.frame.origin.y+frame.size.height)];
 }
 
 /*

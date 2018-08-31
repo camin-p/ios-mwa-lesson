@@ -23,24 +23,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t Say a Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUr-TG-g8A">
-                    <rect key="frame" x="96" y="8" width="271" height="21"/>
+                    <rect key="frame" x="106" y="8" width="261" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2j-7o-uiw">
-                    <rect key="frame" x="96" y="37" width="271" height="50.5"/>
+                    <rect key="frame" x="106" y="37" width="261" height="50.5"/>
                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna wirl aliqua. Up exlaborum incididunt.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W1M-0e-gVe">
-                    <rect key="frame" x="8" y="20" width="80" height="80"/>
-                    <color key="backgroundColor" red="0.0" green="1" blue="0.036728937178850174" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W1M-0e-gVe">
+                    <rect key="frame" x="8" y="15" width="90" height="90"/>
+                    <color key="backgroundColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="80" id="2dy-gD-L7c"/>
-                        <constraint firstAttribute="height" constant="80" id="84r-sv-Uw7"/>
+                        <constraint firstAttribute="height" constant="90" id="3cj-Bj-EaX"/>
+                        <constraint firstAttribute="width" constant="90" id="JFX-Ts-vPm"/>
                     </constraints>
                 </imageView>
             </subviews>

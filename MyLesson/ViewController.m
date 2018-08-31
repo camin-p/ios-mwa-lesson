@@ -188,7 +188,10 @@
             cell = [[customTableViewCell alloc] init];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"cover_picture"]]];
+        //cell.imageView.image = nil;
+        //[cell.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"cover_picture"]]];
+        [cell.cardView.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"cover_picture"]]];
+        
         
         cell.cardView.titleLbl.text = data[@"title"];
         cell.cardView.detailLbl.text = data[@"news"];
