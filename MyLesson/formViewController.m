@@ -7,7 +7,7 @@
 //
 
 #import "formViewController.h"
-
+#import "NSObject+NSDictionaryJsonHelper.h"
 @interface formViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *locationTxt;
 @property (weak, nonatomic) IBOutlet UITextField *telTxt;
@@ -77,5 +77,35 @@
     NSString* location = _locationTxt.text;
     NSString* detail = _detailTxt.text;
     ;
+    NSURL* url = [NSURL URLWithString:@"http://eservicesapp.mwa.co.th/MobileService_TEST/Complain/sendRequest"];
+    NSDictionary *postDict = @{
+                               @"phoneId":tel,
+                               @"imei":@"imei-test",
+                               @"complainCode":@"426",
+                               @"requestCode":@"01",
+                               @"location":location,
+                               @"description":detail
+                               };
+    NSMutableString *post = [[NSMutableString alloc] initWithString: [postDict bv_jsonStringWithPrettyPrint:NO]];
+    NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                       timeoutInterval:300];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"mobile" forHTTPHeaderField:@"username"];
+    [request setValue:@"mobile" forHTTPHeaderField:@"password"];
+    [request setHTTPBody:postData];
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
+    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (data) {
+            id jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            int i=0;
+            int j =1;
+        }
+    }];
+    [postDataTask resume];
 }
 @end

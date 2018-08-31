@@ -23,6 +23,7 @@
 		EC6E267E213683B0000CC50F /* MyLessonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E267D213683B0000CC50F /* MyLessonUITests.m */; };
 		EC6E268D213689CD000CC50F /* Kanit-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC6E268C213689CD000CC50F /* Kanit-Light.ttf */; };
 		EC8FC67F2138FB4E00B92877 /* formViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8FC67E2138FB4E00B92877 /* formViewController.m */; };
+		EC8FC682213919E100B92877 /* NSObject+NSDictionaryJsonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8FC681213919E000B92877 /* NSObject+NSDictionaryJsonHelper.m */; };
 		ECA17D00213793F80095DCDB /* cardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA17D02213793F80095DCDB /* cardView.xib */; };
 		ECA17D08213795410095DCDB /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA17D06213795410095DCDB /* Utils.m */; };
 		ECA17D0B213796220095DCDB /* BundleLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA17D09213796220095DCDB /* BundleLanguage.m */; };
@@ -82,6 +83,9 @@
 		EC6E268C213689CD000CC50F /* Kanit-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Light.ttf"; sourceTree = "<group>"; };
 		EC8FC67D2138FB4E00B92877 /* formViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = formViewController.h; sourceTree = "<group>"; };
 		EC8FC67E2138FB4E00B92877 /* formViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = formViewController.m; sourceTree = "<group>"; };
+		EC8FC680213919E000B92877 /* NSObject+NSDictionaryJsonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSDictionaryJsonHelper.h"; sourceTree = "<group>"; };
+		EC8FC681213919E000B92877 /* NSObject+NSDictionaryJsonHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSDictionaryJsonHelper.m"; sourceTree = "<group>"; };
+		EC8FC68321391AE600B92877 /* MyLesson.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyLesson.pch; sourceTree = "<group>"; };
 		ECA17CFE213792A20095DCDB /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
 		ECA17CFF213792A20095DCDB /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ECA17D03213793FE0095DCDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/cardView.xib; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 		EC6E2658213683AE000CC50F /* MyLesson */ = {
 			isa = PBXGroup;
 			children = (
+				EC8FC680213919E000B92877 /* NSObject+NSDictionaryJsonHelper.h */,
+				EC8FC681213919E000B92877 /* NSObject+NSDictionaryJsonHelper.m */,
 				ECA17D0A213796220095DCDB /* BundleLanguage.h */,
 				ECA17D09213796220095DCDB /* BundleLanguage.m */,
 				ECA17D07213795410095DCDB /* Utils.h */,
@@ -199,6 +205,7 @@
 				EC107BD72138EBCE0011DC79 /* detailListViewController.m */,
 				EC8FC67D2138FB4E00B92877 /* formViewController.h */,
 				EC8FC67E2138FB4E00B92877 /* formViewController.m */,
+				EC8FC68321391AE600B92877 /* MyLesson.pch */,
 			);
 			path = MyLesson;
 			sourceTree = "<group>";
@@ -452,6 +459,7 @@
 				EC107BD82138EBCE0011DC79 /* detailListViewController.m in Sources */,
 				EC8FC67F2138FB4E00B92877 /* formViewController.m in Sources */,
 				ECA17D08213795410095DCDB /* Utils.m in Sources */,
+				EC8FC682213919E100B92877 /* NSObject+NSDictionaryJsonHelper.m in Sources */,
 				EC6E265B213683AE000CC50F /* AppDelegate.m in Sources */,
 				ECA17D0B213796220095DCDB /* BundleLanguage.m in Sources */,
 				EC107BD42138E3210011DC79 /* detailViewController.m in Sources */,
@@ -638,6 +646,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MyLesson/MyLesson.pch;
 				INFOPLIST_FILE = MyLesson/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -656,6 +666,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MyLesson/MyLesson.pch;
 				INFOPLIST_FILE = MyLesson/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

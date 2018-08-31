@@ -8,6 +8,6 @@
 
 #import "ViewController.h"
 
-@interface formViewController : ViewController
+@interface formViewController : ViewController<NSURLSessionDelegate>
 
 @end
