@@ -10,6 +10,8 @@
 		00F25FF013439F81EEFA9724 /* Pods_MyLessonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD611E4F2DCCA9380A3B17C /* Pods_MyLessonTests.framework */; };
 		6BE69D167C27FA83BC9C7F73 /* Pods_MyLesson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C45183F6C88116243BF618CF /* Pods_MyLesson.framework */; };
 		E1C43EF9F128FB911B994F20 /* Pods_MyLessonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90D3EBAE10EE0F95DB6F0C4 /* Pods_MyLessonUITests.framework */; };
+		EC107BD42138E3210011DC79 /* detailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC107BD32138E3210011DC79 /* detailViewController.m */; };
+		EC107BD82138EBCE0011DC79 /* detailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC107BD72138EBCE0011DC79 /* detailListViewController.m */; };
 		EC3452CE2136968A0067BCA1 /* cardView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3452CD2136968A0067BCA1 /* cardView.m */; };
 		EC6E265B213683AE000CC50F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E265A213683AE000CC50F /* AppDelegate.m */; };
 		EC6E265E213683AE000CC50F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6E265D213683AE000CC50F /* ViewController.m */; };
@@ -54,6 +56,10 @@
 		B25466148B7920ADC39D3FAA /* Pods-MyLesson.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLesson.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyLesson/Pods-MyLesson.debug.xcconfig"; sourceTree = "<group>"; };
 		B90D3EBAE10EE0F95DB6F0C4 /* Pods_MyLessonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyLessonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45183F6C88116243BF618CF /* Pods_MyLesson.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyLesson.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC107BD22138E3210011DC79 /* detailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = detailViewController.h; sourceTree = "<group>"; };
+		EC107BD32138E3210011DC79 /* detailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = detailViewController.m; sourceTree = "<group>"; };
+		EC107BD62138EBCE0011DC79 /* detailListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = detailListViewController.h; sourceTree = "<group>"; };
+		EC107BD72138EBCE0011DC79 /* detailListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = detailListViewController.m; sourceTree = "<group>"; };
 		EC3452CC2136968A0067BCA1 /* cardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cardView.h; sourceTree = "<group>"; };
 		EC3452CD2136968A0067BCA1 /* cardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cardView.m; sourceTree = "<group>"; };
 		EC6E2656213683AE000CC50F /* MyLesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLesson.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +190,10 @@
 				ECA17D0D2137A7D60095DCDB /* customTableViewCell.m */,
 				ECA17D112137E6070095DCDB /* progressTableViewCell.h */,
 				ECA17D122137E6070095DCDB /* progressTableViewCell.m */,
+				EC107BD22138E3210011DC79 /* detailViewController.h */,
+				EC107BD32138E3210011DC79 /* detailViewController.m */,
+				EC107BD62138EBCE0011DC79 /* detailListViewController.h */,
+				EC107BD72138EBCE0011DC79 /* detailListViewController.m */,
 			);
 			path = MyLesson;
 			sourceTree = "<group>";
@@ -434,9 +444,11 @@
 				ECA17D132137E6070095DCDB /* progressTableViewCell.m in Sources */,
 				EC6E2669213683AF000CC50F /* main.m in Sources */,
 				EC3452CE2136968A0067BCA1 /* cardView.m in Sources */,
+				EC107BD82138EBCE0011DC79 /* detailListViewController.m in Sources */,
 				ECA17D08213795410095DCDB /* Utils.m in Sources */,
 				EC6E265B213683AE000CC50F /* AppDelegate.m in Sources */,
 				ECA17D0B213796220095DCDB /* BundleLanguage.m in Sources */,
+				EC107BD42138E3210011DC79 /* detailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,7 +566,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -607,7 +619,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -621,6 +633,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MyLesson/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,6 +651,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MyLesson/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

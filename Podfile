@@ -6,7 +6,7 @@ target 'MyLesson' do
   use_frameworks!
 
   # Pods for MyLesson
-  pod 'SDWebImage', '~>3.6'
+  pod 'SDWebImage', '~>4.0'
   pod 'MBProgressHUD', '~>0.9.1'  
    
   pod 'Charts','~>3.0.2'

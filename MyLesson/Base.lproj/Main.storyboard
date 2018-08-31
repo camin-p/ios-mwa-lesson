@@ -83,7 +83,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="switchLanguage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4cJ-cm-hS1"/>
+                                            <action selector="switchLanguage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qrQ-Nd-nQg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -178,34 +178,110 @@
             </objects>
             <point key="canvasLocation" x="-185" y="-563"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail List View Controller-->
+        <scene sceneID="Yk3-of-wuC">
+            <objects>
+                <viewController storyboardIdentifier="detailVID" id="Jue-La-Nni" customClass="detailListViewController" sceneMemberID="viewController">
+                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="yDT-E0-53f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYj-L5-qwi">
+                                <rect key="frame" x="12" y="32" width="351" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qvC-bT-UBF">
+                                <rect key="frame" x="12" y="60.5" width="351" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pSR-Q7-f9u">
+                                <rect key="frame" x="12" y="299" width="351" height="384"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DYj-L5-qwi" firstAttribute="top" secondItem="0eL-AB-Wvo" secondAttribute="top" constant="12" id="1bY-KS-q3a"/>
+                            <constraint firstItem="DYj-L5-qwi" firstAttribute="trailing" secondItem="0eL-AB-Wvo" secondAttribute="trailing" constant="-12" id="GOl-G0-w9u"/>
+                            <constraint firstItem="DYj-L5-qwi" firstAttribute="leading" secondItem="0eL-AB-Wvo" secondAttribute="leading" constant="12" id="XWK-ux-XWr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0eL-AB-Wvo"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="qvC-bT-UBF" id="bj3-3p-lP3"/>
+                        <outlet property="titleLbl" destination="DYj-L5-qwi" id="obu-Zk-co2"/>
+                        <outlet property="webView" destination="pSR-Q7-f9u" id="hC9-KF-yee"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xn8-kg-uAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669.60000000000002" y="-582.45877061469275"/>
+        </scene>
+        <!--Detail View Controller-->
         <scene sceneID="SOD-SL-nYQ">
             <objects>
-                <viewController id="bvQ-e4-bIY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailVCId" id="bvQ-e4-bIY" customClass="detailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SQV-aG-JTx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sAw-Gq-F1W">
-                                <rect key="frame" x="47" y="213" width="300" height="210"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ls-fL-4Ac">
+                                <rect key="frame" x="12" y="32" width="351" height="623"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7W-i5-SxB">
-                                        <rect key="frame" x="0.0" y="-100" width="285" height="411"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.089003629982471466" green="0.82357931137084961" blue="0.95282059907913208" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rp6-W3-DE4">
+                                        <rect key="frame" x="8" y="8" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Td3-jv-B4n">
+                                        <rect key="frame" x="8" y="36" width="42" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="2UK-ee-PJ8"/>
+                                        </constraints>
+                                    </imageView>
+                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weJ-F3-kNI">
+                                        <rect key="frame" x="8" y="194" width="42" height="128"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="YTE-oS-BC0"/>
+                                        </constraints>
+                                    </webView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.17554751038551331" green="0.98043709993362427" blue="0.031259771436452866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                                <constraints>
+                                    <constraint firstItem="weJ-F3-kNI" firstAttribute="leading" secondItem="8Ls-fL-4Ac" secondAttribute="leading" constant="8" id="Byb-BU-dDU"/>
+                                    <constraint firstItem="Rp6-W3-DE4" firstAttribute="leading" secondItem="8Ls-fL-4Ac" secondAttribute="leading" constant="8" id="D6E-Bw-Uhz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rp6-W3-DE4" secondAttribute="trailing" constant="8" id="GdL-LR-Rn5"/>
+                                    <constraint firstItem="Td3-jv-B4n" firstAttribute="top" secondItem="Rp6-W3-DE4" secondAttribute="bottom" constant="8" id="IOK-r7-dBM"/>
+                                    <constraint firstItem="Td3-jv-B4n" firstAttribute="leading" secondItem="8Ls-fL-4Ac" secondAttribute="leading" constant="8" id="SPN-um-Iq6"/>
+                                    <constraint firstItem="Rp6-W3-DE4" firstAttribute="top" secondItem="8Ls-fL-4Ac" secondAttribute="top" constant="8" id="iCp-Hv-YEL"/>
+                                    <constraint firstAttribute="trailing" secondItem="weJ-F3-kNI" secondAttribute="trailing" constant="8" id="kt5-wX-0Yv"/>
+                                    <constraint firstAttribute="trailing" secondItem="Td3-jv-B4n" secondAttribute="trailing" constant="8" id="xQD-5C-n5s"/>
+                                    <constraint firstItem="weJ-F3-kNI" firstAttribute="top" secondItem="Td3-jv-B4n" secondAttribute="bottom" constant="8" id="y9u-Bb-Q71"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8Ls-fL-4Ac" firstAttribute="bottom" secondItem="K5A-it-MNa" secondAttribute="bottom" constant="-12" id="Gli-4U-Y1g"/>
+                            <constraint firstItem="8Ls-fL-4Ac" firstAttribute="top" secondItem="K5A-it-MNa" secondAttribute="top" constant="12" id="QRJ-RD-tHD"/>
+                            <constraint firstItem="8Ls-fL-4Ac" firstAttribute="trailing" secondItem="K5A-it-MNa" secondAttribute="trailing" constant="-12" id="Ye8-2a-aUv"/>
+                            <constraint firstItem="8Ls-fL-4Ac" firstAttribute="leading" secondItem="K5A-it-MNa" secondAttribute="leading" constant="12" id="yF6-hy-pz6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K5A-it-MNa"/>
                     </view>
+                    <connections>
+                        <outlet property="mainImage" destination="Td3-jv-B4n" id="1ZE-Ub-fV1"/>
+                        <outlet property="titleLbl" destination="Rp6-W3-DE4" id="OR4-1F-deB"/>
+                        <outlet property="webView" destination="weJ-F3-kNI" id="gVv-HS-jzN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Su-r1-5tZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="520.79999999999995" y="-387.25637181409297"/>
+            <point key="canvasLocation" x="669.60000000000002" y="96.7016491754123"/>
         </scene>
     </scenes>
 </document>

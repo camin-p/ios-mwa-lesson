@@ -22,37 +22,30 @@
     }
 }
 +(NSString*) getCurrentLanguage{
-//    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-//    NSString *currentLanguageKey = @"currentLanguage";
-//    NSString * language = nil;
-//    if ([preferences objectForKey:currentLanguageKey] == nil)
-//    {
-//        language = [[NSLocale preferredLanguages] objectAtIndex:0];
-//        if (![language isEqualToString:@"en-US"] && ![language isEqualToString:@"th-TH"]) {
-//            language = @"en-US";
-//        }
-//        [Utils setCurrentLanguage:language];
-//    }
-//    else
-//    {
-//        language = [preferences stringForKey:currentLanguageKey];
-//    }
-//    return language;
-    NSString *language = NSBundle.mainBundle.preferredLocalizations.firstObject;
-    
-    NSLocale *locale = NSLocale.currentLocale;
-    NSString *langCode = [locale objectForKey:NSLocaleLanguageCode];
-    
-    return langCode;
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *currentLanguageKey = @"currentLanguage";
+    NSString * language = nil;
+    if ([preferences objectForKey:currentLanguageKey] == nil)
+    {
+        NSLocale *locale = NSLocale.currentLocale;
+        NSString *langCode = [locale objectForKey:NSLocaleLanguageCode];
+        
+        return langCode;
+    }
+    else
+    {
+        language = [preferences stringForKey:currentLanguageKey];
+    }
+    return language;
 }
 +(void) setCurrentLanguage:(NSString*) language{
-//    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-//    NSString *currentLanguageKey = @"currentLanguage";
-//    [preferences setValue:language forKey:currentLanguageKey];
-//    NSString*_2lang = [language substringWithRange:NSMakeRange(0, 2)];
-//    
-//    [preferences setObject:[NSArray arrayWithObjects:_2lang, nil] forKey:@"AppleLanguages"];
-//    [preferences synchronize];
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *currentLanguageKey = @"currentLanguage";
+    [preferences setValue:language forKey:currentLanguageKey];
+    NSString*_2lang = [language substringWithRange:NSMakeRange(0, 2)];
+    
+    [preferences setObject:[NSArray arrayWithObjects:_2lang, nil] forKey:@"AppleLanguages"];
+    [preferences synchronize];
     [NSBundle setLanguage:language];
     dispatch_async(dispatch_get_main_queue(), ^(void){
         AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;

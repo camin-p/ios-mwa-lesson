@@ -14,6 +14,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #include "progressTableViewCell.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "detailViewController.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *cardView1;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -91,7 +92,13 @@
 
 
 - (IBAction)switchLanguage:(id)sender {
-    [Utils setCurrentLanguage:@"en"];
+    if ([[Utils getCurrentLanguage] isEqualToString:@"en"]) {
+        [Utils setCurrentLanguage:@"th"];
+    }else{
+        [Utils setCurrentLanguage:@"en"];
+    }
+    
+    
 }
 
 -(void) loadNews:(NSString*) requestDate{
@@ -148,6 +155,22 @@
     }
     
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSDictionary* data = [_newsItem objectAtIndex:indexPath.row];
+    
+    if ([data objectForKey:@"isLoading"]) {
+    }else{
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        detailViewController* detail = [storyboard instantiateViewControllerWithIdentifier:@"detailVCId"];
+        [detail setTitleTxt:data[@"title"]];
+        [detail setNewsTxt:data[@"news"]];
+        [detail setCover_picture:data[@"cover_picture"]];
+        
+        [self.navigationController pushViewController:detail animated:YES];
+    }
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSDictionary* data = [_newsItem objectAtIndex:indexPath.row];
@@ -165,8 +188,9 @@
             cell = [[customTableViewCell alloc] init];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
+        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"cover_picture"]]];
         
-        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:data[@"cover_picture"]]]; cell.cardView.titleLbl.text = data[@"title"];
+        cell.cardView.titleLbl.text = data[@"title"];
         cell.cardView.detailLbl.text = data[@"news"];
         return cell;
     }
@@ -181,7 +205,7 @@
         float y = offset.y + bounds.size.height - inset.bottom;
         float h = size.height;
         float reload_distance = 50;
-        if(y > h + reload_distance) {
+        if(y > h - reload_distance) {
             _isLoading = true;
             NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:_newsItem];
             [arr addObject:@{@"isLoading":@"1"}];
@@ -192,5 +216,11 @@
         }
     }
     
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([[segue identifier] isEqualToString:@"MainBtnOpen"]) {
+        detailViewController*detailVC = [segue destinationViewController];
+    }
 }
 @end

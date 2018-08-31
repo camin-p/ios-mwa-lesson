@@ -58,5 +58,8 @@
     [[self layer] setShadowOpacity:0.24];
     [[self layer]setShadowRadius:2];
     [[self layer] setShadowOffset:CGSizeMake(0, 2)];
+    
+    [[self imageView] setContentMode:UIViewContentModeScaleAspectFit];
+    [[self imageView] setClipsToBounds:YES];
 }
 @end
